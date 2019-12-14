@@ -17,22 +17,22 @@
     "dataSource": "ShoppingMongo"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "ShoppingMongo",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "ShoppingMongo",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "ShoppingMongo",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "ShoppingMongo",
     "public": false
   },
   "Category": {

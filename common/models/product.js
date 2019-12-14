@@ -10,12 +10,12 @@ module.exports = function(Product) {
         for  (let i=0; i< result.length; i++) {
             const prod = result[i];
             const cate = await prod.category.get();
-            result[i].__data.categoryName = cate.name;
+            if(cate) result[i].__data.categoryName = cate.name;
         }
     })
     Product.afterRemote("findById", async ctx => {
         const result = ctx.result;
         const cate = await result.category.get();
-        result.__data.categoryName = cate.name;
+        if(cate) result.__data.categoryName = cate.name;
     })
 };

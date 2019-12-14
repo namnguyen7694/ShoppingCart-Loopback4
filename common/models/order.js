@@ -31,7 +31,7 @@ module.exports = function(Order) {
         for (let i=0; i< orderItems.length; i++) {
             const item = orderItems[i];
             const detailItem = await item.product.get()
-            productList.push({
+            if(detailItem) productList.push({
                 ...detailItem.__data,
                 quantity: item.__data.quantity
             })
@@ -42,8 +42,7 @@ module.exports = function(Order) {
 
         result.__data.productList = productList;
         result.__data.totalPrice = totalPrice;
-        result.__data.accountInfo = account.__data.username;
-
+        result.__data.accountInfo = account.__data.email;
     })
     
 };
